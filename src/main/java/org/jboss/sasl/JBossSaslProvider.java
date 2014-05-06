@@ -26,6 +26,10 @@ import static org.jboss.sasl.anonymous.AbstractAnonymousFactory.ANONYMOUS;
 import static org.jboss.sasl.plain.PlainServerFactory.PLAIN;
 import static org.jboss.sasl.digest.DigestMD5ServerFactory.DIGEST_MD5;
 import static org.jboss.sasl.localuser.LocalUserSaslFactory.JBOSS_LOCAL_USER;
+import static org.jboss.sasl.scram.ScramSha1ClientFactory.SCRAM_SHA_1;
+import static org.jboss.sasl.scram.ScramSha256ClientFactory.SCRAM_SHA_256;
+import static org.jboss.sasl.scram.ScramSha384ClientFactory.SCRAM_SHA_384;
+import static org.jboss.sasl.scram.ScramSha512ClientFactory.SCRAM_SHA_512;
 
 import javax.security.sasl.SaslClientFactory;
 import javax.security.sasl.SaslServerFactory;
@@ -38,6 +42,10 @@ import org.jboss.sasl.digest.DigestMD5ServerFactory;
 import org.jboss.sasl.plain.PlainServerFactory;
 import org.jboss.sasl.localuser.LocalUserClientFactory;
 import org.jboss.sasl.localuser.LocalUserServerFactory;
+import org.jboss.sasl.scram.ScramSha1ClientFactory;
+import org.jboss.sasl.scram.ScramSha256ClientFactory;
+import org.jboss.sasl.scram.ScramSha384ClientFactory;
+import org.jboss.sasl.scram.ScramSha512ClientFactory;
 
 /**
  * @author <a href="mailto:david.lloyd@redhat.com">David M. Lloyd</a>
@@ -68,6 +76,10 @@ public final class JBossSaslProvider extends Provider {
         put(SASL_SERVER_FACTORY + DOT + DIGEST_MD5, DigestMD5ServerFactory.class.getName());
         put(SASL_SERVER_FACTORY + DOT + JBOSS_LOCAL_USER, LocalUserServerFactory.class.getName());
         put(SASL_CLIENT_FACTORY + DOT + JBOSS_LOCAL_USER, LocalUserClientFactory.class.getName());
+        put(SASL_CLIENT_FACTORY + DOT + SCRAM_SHA_1, ScramSha1ClientFactory.class.getName());
+        put(SASL_CLIENT_FACTORY + DOT + SCRAM_SHA_256, ScramSha256ClientFactory.class.getName());
+        put(SASL_CLIENT_FACTORY + DOT + SCRAM_SHA_384, ScramSha384ClientFactory.class.getName());
+        put(SASL_CLIENT_FACTORY + DOT + SCRAM_SHA_512, ScramSha512ClientFactory.class.getName());
     }
 
     /**

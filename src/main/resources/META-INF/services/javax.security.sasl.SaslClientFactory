@@ -22,6 +22,10 @@
 
 # our SASL factory providers (Ordered)
 org.jboss.sasl.localuser.LocalUserClientFactory
+org.jboss.sasl.scram.ScramSha1ClientFactory
+org.jboss.sasl.scram.ScramSha256ClientFactory
+org.jboss.sasl.scram.ScramSha384ClientFactory
+org.jboss.sasl.scram.ScramSha512ClientFactory
 org.jboss.sasl.digest.DigestMD5ClientFactory
 org.jboss.sasl.anonymous.AnonymousClientFactory
 
